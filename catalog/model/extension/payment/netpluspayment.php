@@ -1,7 +1,7 @@
 <?php
 
 class ModelExtensionPaymentNetpluspayment extends Model {
-	
+
 	//Sample DB access - Get all customers
 	function getCustomerData() {
 		$query = "SELECT * FROM " . DB_PREFIX . "customer";
@@ -13,12 +13,12 @@ class ModelExtensionPaymentNetpluspayment extends Model {
 	public function getMethod($address, $total) {
 		$this->load->language('extension/payment/netpluspayment');
 
-                    $status = true;
+		$status = true;
 		if (!$this->cart->hasShipping()) {
 			$status = false;
 		}
-               if(!$this->config->get('netpluspayment_status'))
-                $status = false;
+		if(!$this->config->get('netpluspayment_status'))
+			$status = false;
 		$method_data = array();
 
 		if ($status) {
@@ -32,7 +32,7 @@ class ModelExtensionPaymentNetpluspayment extends Model {
 
 		return $method_data;
 	}
-	
+
 }
 
 ?>

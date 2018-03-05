@@ -1,8 +1,8 @@
 <?php
 
 class ModelExtensionPaymentNetpluspayment extends Model {
-	
-	
+
+
 
 
 	function getStatesData() {
@@ -11,7 +11,7 @@ class ModelExtensionPaymentNetpluspayment extends Model {
 		$result = $this->db->query($query);
 		return $result->rows;
 	}
-	
+
 }
 
 ?>
